@@ -48,9 +48,10 @@ nfft=64
 Samples=[10**ind for ind in range(1,3)]
 # Samples=[10,100,1000,5*10**3,10**4,2*10**4,5*10**4,7*10**4]
 nTraj=Samples[len(Samples)-1]
-nNetworks=5
-ind_f=17 # must be between 0 and nfft-1
-conti_samp=0 # conti_samp=1(0) denote continuous sampling (restart and record sampling)
+nNetworks=50 # number of random networks where the algorithm is tested, for a fixed num_nodes and max_in_degree. 
+# Used to approximate P(G=G_hat) by #(G=G_hat)/nNetworks. We used 50 for the simulations in the paper.
+ind_f=17 # must be between 0 and nfft-1. The frequency at which the algorithm is tested
+conti_samp=0 # conti_samp=1(0) denote continuous sampling (restart and record sampling) see the paper for details
 correlated_noise=1 # correlated_noise=1(0) denote temporally-correlated(i.i.d.) noise
 file_loc=directory
 
